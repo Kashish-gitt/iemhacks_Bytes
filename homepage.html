@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthcare</title>
     <style>
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-       
         body {
             font-family: Arial, sans-serif;
         }
@@ -24,12 +20,23 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background-color: #f8f8f8;
+            background-color: #4CAF50; /* Green background */
+            opacity: 0; /* Initially hidden */
+            animation: fadeInNav 1s ease-in-out forwards; /* Fade-in animation for navigation */
+        }
+
+        @keyframes fadeInNav {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         nav img {
             width: 94px;
-            height: 12vh;
+            height: auto;
         }
 
         nav ul {
@@ -39,59 +46,137 @@
 
         nav a {
             text-decoration: none;
-            color: #333;
-            font-size: 3vh;
+            color: #fff; /* White text for contrast */
+            font-size: 1.5rem;
             margin: 0 15px;
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: black; /* Hover color */
         }
 
         .hero {
             background-image: url('healthcare_bg.jpg');
             background-size: cover;
             background-position: center;
-            color: white;
+            color: #333; /* Dark text for readability */
             text-align: center;
             padding: 150px 0;
+            opacity: 0; /* Initially hidden */
+            animation: fadeInHero 1s ease-in-out forwards; /* Fade-in animation for hero section */
+            transform: translateZ(0); /* Create a stacking context for parallax effect */
+        }
+
+        @keyframes fadeInHero {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         .hero h1 {
-            font-size: 36px;
+            font-size: 2.5rem;
             margin-bottom: 20px;
+            animation: fadeinout 10s linear forwards;
+
         }
+        @keyframes fadeinout{
+
+0%,100% { opacity: 0.1; }
+
+50% { opacity: 1; }
+
+}
 
         .hero p {
-            font-size: 18px;
+            font-size: 1.5rem;
             margin-bottom: 40px;
+            animation: fadeinout 10s linear forwards;
+
         }
 
         .cta-button {
-            background-color: #e74c3c;
-            color: white;
+            background-color: #FF5722; /* Orange button */
+            color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
             text-transform: uppercase;
             text-decoration: none;
             font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19; /* Hover background color */
+            color: black;
         }
 
         footer {
             text-align: center;
             padding: 30px 0;
-            background-color: #f8f8f8;
+            background-color: #4CAF50; /* Green background */
+            opacity: 0; /* Initially hidden */
+            animation: fadeInFooter 1s ease-in-out forwards; /* Fade-in animation for footer */
+        }
+
+        @keyframes fadeInFooter {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         footer p {
-            color: #333;
+            color: #fff; /* White text for contrast */
         }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* Fade-out animation for hero h1 and p */
+        .fade-out {
+            opacity: 1;
+            animation: fadeOut 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px); /* Optional: Add a slight vertical movement */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+        
     </style>
 </head>
 
 <body>
 
     <nav>
-        <img src="logohospital.png" alt="Healthcare Logo" class="img">
+        <img src="logohospital.png" alt="Healthcare Logo">
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="homepage.html">Home</a></li>
             <li><a href="login.html">Log In</a></li>
             <li><a href="appointment_request.html">Request For Appointment</a></li>
             <li><a href="#">About Us</a></li>
@@ -99,9 +184,9 @@
     </nav>
 
     <div class="hero">
-        <h1>Your Health, Our Priority</h1>
-        <p>Empowering better healthcare through innovation and compassion.</p>
-        <a href="signup.html" class="cta-button">Get Started</a>
+        <h1 class="fade-in">Your Health, Our Priority</h1>
+        <p class="fade-in">Empowering better healthcare through innovation and compassion.</p>
+        <a href="student_faculty.html" class="cta-button">Get Started</a>
     </div>
 
     <footer>
@@ -109,6 +194,4 @@
     </footer>
 
 </body>
-
-</html>
-
+</html> 
