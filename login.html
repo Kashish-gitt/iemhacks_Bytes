@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: Arial, sans-serif;
+            background-image: url('healthcare_bg.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background-color: #f5f5f5;
-        }
-
-        h1 {
-            margin-bottom: 1.5rem;
-            color: black;
-            font-size: 3vw;
-        }
-
-        input:required::after {
-            content: "*";
-            color: red;
         }
 
         .form {
             width: 25vw;
             padding: 2rem;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: black solid;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            color: #333;
+            font-size: 2.5rem;
+            text-align: center;
         }
 
         .input-group {
@@ -64,23 +64,27 @@
             color: #333;
         }
 
+        .login-container {
+            position: relative;
+        }
+
         .login {
             width: 100%;
             padding: 1rem;
             border: none;
             border-radius: 5px;
-            background-color: black;
+            background-color: #FF5722; /* Orange button */
             color: #fff;
             font-weight: 700;
             font-size: 1.2em;
             cursor: pointer;
             margin-top: 10vh;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .login:hover {
-           
-            color: black;
-            background-color: #f5f5f5;
+            background-color: #e64a19; /* Hover background color */
+            transform: scale(1.05); /* Zoom-in effect */
         }
 
         .star {
@@ -134,7 +138,7 @@
                     Remember me
                 </label>
             </div>
-            <div class="loginbutton">
+            <div class="login-container">
                 <button class="login">
                     Login
                 </button>
@@ -142,5 +146,4 @@
         </form>
     </div>
 </body>
-
 </html>
