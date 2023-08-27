@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Appointment</title>
+    <style>
+        /* Reset styles and basic styling here */
+
+        /* Form styling */
+        .appointment-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .appointment-form h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .appointment-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .appointment-form input[type="text"],
+        .appointment-form input[type="email"],
+        .appointment-form select,
+        .appointment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+
+        .appointment-form input[type="text"]:focus,
+        .appointment-form input[type="email"]:focus,
+        .appointment-form select:focus,
+        .appointment-form textarea:focus {
+            border-color: #e74c3c;
+        }
+
+        .appointment-form button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .appointment-form button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <!-- Your navigation menu content -->
+    </nav>
+
+    <div class="appointment-form">
+        <h2>Request an Appointment</h2>
+        <form action="#" method="post">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="service">Select Service:</label>
+            <select id="service" name="service">
+                <option value="general_checkup">General Checkup</option>
+                <option value="dental_care">Dental Care</option>
+                <option value="specialist_consultation">Specialist Consultation</option>
+                <!-- Add more service options as needed -->
+            </select>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+
+    <footer>
+        <!-- Your footer content -->
+    </footer>
+
+</body>
+
+</html>

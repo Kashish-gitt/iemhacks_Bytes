@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Patient Checkup List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: black;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        .patient-checkup {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .patient-info {
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Doctor's Patient Checkup List</h1>
+    </div>
+
+    <div class="container">
+        <h2>Patient Checkup List</h2>
+        <div id="patient-checkups">
+            <!-- Patient checkup items will be dynamically added here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Doctor Appointment Management</p>
+    </footer>
+
+    <script>
+        // Function to fetch patient checkup data (simulated for demonstration)
+        async function fetchPatientCheckups() {
+            // Simulate fetching data from the server (replace with actual API call)
+            const data = [
+                {
+                    disease: "Hypertension",
+                    date: "2023-08-25",
+                    prescription: "Prescribed medication A and lifestyle changes.",
+                },
+                {
+                    disease: "Diabetes",
+                    date: "2023-08-22",
+                    prescription: "Prescribed insulin and diet plan.",
+                },
+                {
+                    disease: "Influenza",
+                    date: "2023-08-19",
+                    prescription: "Prescribed antiviral medication and rest.",
+                },
+                {
+                    disease: "Influenza",
+                    date: "2023-08-19",
+                    prescription: "Prescribed antiviral medication and rest.",
+                }
+            ];
+            return data;
+        }
+
+        // Function to display patient checkup data
+        async function displayPatientCheckups() {
+            const patientCheckups = await fetchPatientCheckups();
+
+            // Loop through the patient checkup data and display each item
+            patientCheckups.forEach(patientCheckup => {
+                const patientCheckupDiv = document.createElement("div");
+                patientCheckupDiv.classList.add("patient-checkup");
+
+                const diseaseInfo = document.createElement("div");
+                diseaseInfo.classList.add("patient-info");
+                diseaseInfo.textContent = `Disease: ${patientCheckup.disease}`;
+                patientCheckupDiv.appendChild(diseaseInfo);
+
+                const dateInfo = document.createElement("div");
+                dateInfo.classList.add("patient-info");
+                dateInfo.textContent = `Date: ${patientCheckup.date}`;
+                patientCheckupDiv.appendChild(dateInfo);
+
+                const prescriptionInfo = document.createElement("div");
+                prescriptionInfo.classList.add("patient-info");
+                prescriptionInfo.textContent = `Prescription: ${patientCheckup.prescription}`;
+                patientCheckupDiv.appendChild(prescriptionInfo);
+
+                document.getElementById("patient-checkups").appendChild(patientCheckupDiv);
+            });
+        }
+
+        // Call the function to display patient checkups when the page loads
+        displayPatientCheckups();
+    </script>
+</body>
+</html>

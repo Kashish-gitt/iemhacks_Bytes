@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Transfer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .doctor-list {
+            margin: 2rem;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .transfer-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="doctor-list">
+        <h2>Available Doctors for Transfer</h2>
+        <ul>
+            <li>
+                <span>Dr. Sarah Johnson</span>
+                <span>Specialty: Pediatrics</span>
+                <button class="transfer-btn" onclick="window.location.href='doctor_appointment_page.html'">Transfer</button>
+            </li>
+            <li>
+                <span>Dr. Michael Smith</span>
+                <span>Specialty: Cardiology</span>
+                <button class="transfer-btn" onclick="window.location.href='doctor_appointment_page.html'">Transfer</button>
+            </li>
+            <li>
+                <span>Dr. Emily Brown</span>
+                <span>Specialty: Dermatology</span>
+                <button class="transfer-btn" onclick="window.location.href='doctor_appointment_page.html'">Transfer</button>
+            </li>
+            <!-- Add more doctors as needed -->
+        </ul>
+    </div>
+</body>
+<!-- <script>
+const doctorItems = document.querySelectorAll('.doctor-list');
+
+doctorItems.forEach(item => {
+    const transferBtn = item.querySelector('.transfer-btn');
+
+    transferBtn.addEventListener('click', () => {
+        // Handle transfer logic here
+        console.log('Transfer initiated for doctor:', item.querySelector('span').textContent);
+        window.location.href = 'doctor_appointment_page.html'; // Replace with the actual URL
+    });
+});
+</script> -->
+</html>

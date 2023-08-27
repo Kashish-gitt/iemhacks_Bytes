@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment Management</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Sidebar styles */
+        .navbar {
+            position: absolute;
+            top: 0;
+            
+            width: 20vw;
+            height: 100%;
+            background-color: #007bff;
+            color: white;
+            transition: left 0.3s ease;
+            z-index: 1000;
+        }
+
+        .navbar.open {
+            left: 0;
+        }
+
+        .navbar-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        .profile {
+            position: absolute;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            /* text-align: center; */
+            border-bottom: 1px solid #ccc;
+            width: 17.9vw;
+            height:35vh;
+            margin-top: 2vh;
+        }
+
+        .profile img {
+            position: absolute;
+            width: 6vw;
+            height: 10vh;
+            border-radius: 100%;
+            border: black solid;
+            object-fit: cover;
+            margin-bottom: 0.5rem;
+            margin-left: 5vw;
+        }
+
+        .profile h3 {
+            position: absolute;
+            margin: 0;
+            color: #333;
+            margin-top: 13vh;
+            margin-left: 4vw;
+        }
+
+        /* .profile p {
+            /* position: absolute; */
+            /* margin: 0; */
+            /* color: #777; */
+            /* margin-top: 16vh; */
+            /* margin-left: 4vw; */
+       /* } */
+
+        .sign-out-btn {
+            color: #007bff;
+            cursor: pointer;
+            position: absolute;
+            margin-top: 30vh;
+            margin-left: 5.5vw;
+        }
+
+        /* Main content styles */
+        .main-content {
+            position: absolute;
+            margin-left: 35vw;
+            padding: 2rem;
+            background-color: white;
+            width: 45vw;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 4rem;
+        }
+        .para2{
+            position: absolute;
+            margin-left: 2vw;
+            margin-top:20vh; 
+            color: #333;
+
+        }
+        .para1{
+            position: absolute;
+            margin-left: 5vw;
+            margin-top:17vh; 
+            color: #333;
+
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        li:hover {
+            background-color: #f0f0f0;
+        }
+
+        li span {
+            font-weight: bold;
+        }
+
+        footer {
+            position: absolute;
+            margin-top: 92vh;
+            text-align: center;
+            width: 100%;
+            padding: 1rem 0;
+            background-color: #f4f4f4;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-title" onclick="toggleSidebar()">Doctor Appointment Management</div>
+        <div class="profile">
+            <img src="doctor_profile.jpg" alt="Doctor Profile">
+            <h3>Dr. John Doe</h3>
+            <p class="para1">Cardiology</p>
+            <p class="para2">john.doe@example.com</p>
+            <div class="sign-out-btn">Sign Out</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h2>Your Appointments</h2>
+        <ul id="appointment-list">
+            <!-- Appointments will be dynamically added here -->
+            <!-- Dummy data -->
+            <li class="appointment-item">
+                <span>Date: 2023-08-28</span>
+                <span>Time: 10:00 AM</span>
+                <span>Patient: John Doe</span>
+            </li>
+            <li class="appointment-item">
+                <span>Date: 2023-08-29</span>
+                <span>Time: 3:30 PM</span>
+                <span>Patient: Jane Smith</span>
+            </li>
+            <li class="appointment-item">
+                <span>Date: 2023-08-29</span>
+                <span>Time: 3:30 PM</span>
+                <span>Patient: Jane Smith</span>
+            </li>
+
+            <li class="appointment-item">
+                <span>Date: 2023-08-29</span>
+                <span>Time: 3:30 PM</span>
+                <span>Patient: Jane Smith</span>
+            </li>
+
+            <!-- More dummy data... -->
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Doctor Appointment Management</p>
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            // Your sidebar toggle function
+        }
+
+        // const appointmentItems = document.querySelectorAll('.appointment-item');
+
+        // appointmentItems.forEach(item => {
+        //     item.addEventListener('click', () => {
+        //         // Clear any previously opened columns
+        //         const existingColumns = document.querySelectorAll('.action-column');
+        //         existingColumns.forEach(column => {
+        //             column.remove();
+        //         });
+
+        //         // Create and append the action column
+        //         const actionColumn = document.createElement('div');
+        //         actionColumn.classList.add('action-column');
+        //         actionColumn.innerHTML = `
+        //             <button class="action-btn accept-btn">Accept</button>
+        //             <button class="action-btn deny-btn">Deny</button>
+        //             <button class="action-btn transfer-btn">Transfer</button>
+        //         `;
+        //         item.appendChild(actionColumn);
+
+        //         // Add click event listeners to the buttons
+        //         const acceptBtn = actionColumn.querySelector('.accept-btn');
+        //         const denyBtn = actionColumn.querySelector('.deny-btn');
+        //         const transferBtn = actionColumn.querySelector('.transfer-btn');
+
+        //         acceptBtn.addEventListener('click', () => {
+        //             // Handle accept logic here
+        //             console.log('Appointment accepted.');
+        //             actionColumn.remove(); // Remove the action column
+        //         });
+
+        //         denyBtn.addEventListener('click', () => {
+        //             // Handle deny logic here
+        //             console.log('Appointment denied.');
+        //             actionColumn.remove(); // Remove the action column
+        //         });
+
+        //         transferBtn.addEventListener('click', () => {
+        //             // Handle transfer logic here
+        //             console.log('Appointment transfer initiated.');
+        //             actionColumn.remove(); // Remove the action column
+        //         });
+        //     });
+        // });
+        const appointmentItems = document.querySelectorAll('.appointment-item');
+
+appointmentItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Clear any previously opened columns
+        const existingColumns = document.querySelectorAll('.action-column');
+        existingColumns.forEach(column => {
+            column.remove();
+        });
+
+        // Create and append the action column
+        const actionColumn = document.createElement('div');
+        actionColumn.classList.add('action-column');
+        actionColumn.innerHTML = `
+            <button class="action-btn accept-btn">Accept</button>
+            <button class="action-btn deny-btn">Deny</button>
+            <button class="action-btn transfer-btn">Transfer</button>
+        `;
+        item.appendChild(actionColumn);
+
+        // Add click event listeners to the buttons
+        const acceptBtn = actionColumn.querySelector('.accept-btn');
+        const denyBtn = actionColumn.querySelector('.deny-btn');
+        const transferBtn = actionColumn.querySelector('.transfer-btn');
+
+        acceptBtn.addEventListener('click', () => {
+            // Handle accept logic here
+            console.log('Appointment accepted.');
+            alert('Appointment accepted.');
+            actionColumn.style.display = 'none';
+            // acceptBtn.textContent = 'Accepted'; // Change button text
+            // denyBtn.style.display = 'none'; // Hide the "Deny" button
+            // transferBtn.style.display = 'none'; // Hide the "Transfer" button
+            actionColumn.style.display = 'none';
+        });
+
+        denyBtn.addEventListener('click', () => {
+            // Handle deny logic here
+            console.log('Appointment denied.');
+            item.style.display = 'none'; // Hide the appointment item
+            actionColumn.remove(); // Remove the action column
+        });
+
+        transferBtn.addEventListener('click', () => {
+            // Handle transfer logic here
+            console.log('Appointment transfer initiated.');
+            window.location.href="transfer_doctor.html";
+            actionColumn.remove(); // Remove the action column
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
