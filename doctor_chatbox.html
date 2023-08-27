@@ -1,111 +1,107 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Chatbot</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor-Patient Chat</title>
     <style>
+        /* Basic CSS styles for the chatbox */
         body {
-  font-family: "Open Sans", sans-serif;
-  background-color: #f7efe5;
-}
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
 
-#chat-window {
-  width: 500px;
-  margin: 0 auto;
-  background-color: #674188;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 50px;
-}
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
 
-#chat-messages {
-  padding: 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  height: calc(100vh - 200px);
-  max-height: calc(100vh - 200px);
-  overflow: auto;
-}
+        .message-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
 
-#chat-form {
-  display: flex;
-  align-items: center;
-}
+        .message-container.patient {
+            background-color: #eff5fc;
+        }
 
-#chat-input {
-  flex-grow: 1;
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
+        .message-container.doctor {
+            background-color: #d4edda;
+            text-align: right;
+        }
 
-button[type="submit"] {
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: #f7efe5;
-  color: #674188;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-}
-.bot-message {
-  font-family: "Roboto", sans-serif;
-  background-color: #fffbf5; /* different light color */
-  text-align: justify; /* keep it right-aligned */
-  padding: 15px; /* added padding */
-  margin-top: 10px; /* added margin-top to create a gap */
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  font-style: italic;
-}
+        /* Chat input and send button */
+        .chat-input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
 
-.user-message {
-  font-family: "Nunito", sans-serif;
-  background-color: #f7efe5; /* light color */
-  text-align: left; /* changed text align to left */
-  padding: 15px; /* added padding */
-  display: flex;
-  align-items: center;
-  font-style: italic;
-}
-.user-message img,
-.bot-message img {
-  width: 40px; /* adjust the width of the icon */
-  height: 40px; /* adjust the height of the icon */
-  margin-right: 20px; /* add some margin to separate the icon from the message */
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 400px) {
-  #chat-window {
-    width: 90%;
-  }
-}
-.main-title {
-  font-size: 1.5rem;
-  text-align: center;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin-bottom: 0.5rem;
-  color: #fffbf5;
-  font-style: italic;
-}
+        .send-button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
     </style>
-  </head>
-  <body>
-    <div id="chat-window">
-      <div class="main-title">CHAT BOT USING CHAT-GPT</div>
-      <div id="chat-messages"></div>
-      <form id="chat-form">
-        <input
-          type="text"
-          id="chat-input"
-          autocomplete="off"
-          placeholder="Type your message here"
-          required
-        />
-        <button type="submit">Send</button>
-      </form>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>Doctor-Patient Chat</h1>
+        <div id="chat-messages">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="message" class="chat-input" placeholder="Type your message">
+            <button id="send" class="send-button">Send</button>
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"></script>
-    <script type="module" src="app.js"></script>
-  </body>
+
+    <script>
+        // JavaScript for handling chat functionality
+        const chatMessages = document.getElementById("chat-messages");
+        const messageInput = document.getElementById("message");
+        const sendButton = document.getElementById("send");
+
+        // Function to add a new message to the chat
+        function addMessage(message, sender) {
+            const messageContainer = document.createElement("div");
+            messageContainer.textContent = message;
+            messageContainer.classList.add("message-container", sender);
+            chatMessages.appendChild(messageContainer);
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the latest message
+        }
+
+        // Event listener for the send button
+        sendButton.addEventListener("click", () => {
+            const message = messageInput.value;
+            if (message.trim() !== "") {
+                addMessage(message, "patient"); // Add patient's message
+                // Simulate a reply from the doctor (replace with actual logic)
+                setTimeout(() => {
+                    addMessage("This is the doctor's reply.", "doctor");
+                }, 1000);
+                messageInput.value = ""; // Clear the input field
+            }
+        });
+
+        // Simulate an initial greeting from the doctor
+        setTimeout(() => {
+            addMessage("Hello! How can I help you today?", "doctor");
+        }, 1000);
+    </script>
+</body>
 </html>
