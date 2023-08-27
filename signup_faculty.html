@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('healthcare_bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .form {
+            width: 25vw;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: black solid;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            color: #333;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .input-group input {
+            width: 100%;
+            font-size: 1em;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .checkbox {
+            position: absolute;
+            margin-top: 0.3vh;
+            margin-left: 2vw;
+            color: #333;
+        }
+
+        .signup-container {
+            position: relative;
+        }
+
+        .signnup {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #FF5722; /* Orange button */
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 10vh;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .signnup:hover {
+            background-color: #e64a19; /* Hover background color */
+            transform: scale(1.05); /* Zoom-in effect on hover */
+        }
+
+        .star {
+            color: red;
+        }
+
+        .para {
+            position: absolute;
+            width: 25vw;
+            margin-left: 3.8vw;
+            font-size: 1.2vw;
+            margin-bottom: 40vh;
+        }
+
+        @media (max-width: 914px) {
+            .form {
+                width: 65vw;
+            }
+            .form h1 {
+                font-size: 4vw;
+            }
+            .checkbox {
+                margin-top: 4vh;
+                margin-left: 1vw;
+            }
+            .para {
+                width: 30vh;
+                margin-top: 2.2vh;
+                font-size: 1em;
+                margin-left: 7vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <form action="doctor_homepage.html">
+            <h1>Sign Up</h1>
+            <div class="input-group">
+                <label for="name">Full Name <span class="star">*</span></label>
+                <input type="text" id="name" placeholder="Full Name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email<span class="star">*</span></label>
+                <input type="text" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <label for="username">User Name <span class="star">*</span></label>
+                <input type="text" id="username" placeholder="User Name" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password <span class="star">*</span></label>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <!-- <div class=" checkbox"> -->
+                <input type="checkbox" id="agree" required>
+                <label for="agree">I agree to the terms of the User <span class="star">*</span></label>
+            <!-- </div> -->
+                        <!-- <div class="para">
+                <p> I agree to the terms of the User</p>
+            </div> -->
+            <div class="signup-container">
+                <button class="signnup">
+                    Sign Up
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
