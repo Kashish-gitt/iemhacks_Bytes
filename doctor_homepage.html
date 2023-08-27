@@ -1,189 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Dashboard</title>
-    <style>
-        /* Your existing CSS styles here */
-        .navbar {
-            position: absolute;
-            top: 0;
-            
-            width: 20vw;
-            height: 100%;
-            background-color: #007bff;
-            color: white;
-            transition: left 0.3s ease;
-            z-index: 1000;
-        }
-
-        .navbar.open {
-            left: 0;
-        }
-
-        .navbar-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding: 1rem;
-            cursor: pointer;
-        }
-
-        .profile {
-            position: absolute;
-            background-color: #f4f4f4;
-            padding: 1rem;
-            /* text-align: center; */
-            border-bottom: 1px solid #ccc;
-            width: 17.9vw;
-            height:35vh;
-            margin-top: 2vh;
-        }
-
-        .profile img {
-            position: absolute;
-            width: 6vw;
-            height: 10vh;
-            border-radius: 100%;
-            border: black solid;
-            object-fit: cover;
-            margin-bottom: 0.5rem;
-            margin-left: 5vw;
-        }
-
-        .profile h3 {
-            position: absolute;
-            margin: 0;
-            color: #333;
-            margin-top: 13vh;
-            margin-left: 4vw;
-        }
-
-        /* .profile p {
-            /* position: absolute; */
-            /* margin: 0; */
-            /* color: #777; */
-            /* margin-top: 16vh; */
-            /* margin-left: 4vw; */
-       /* } */
-
-        .sign-out-btn {
-            color: #007bff;
-            cursor: pointer;
-            position: absolute;
-            margin-top: 30vh;
-            margin-left: 5.5vw;
-        }
-        .para2{
-            position: absolute;
-            margin-left: 2vw;
-            margin-top:20vh; 
-            color: #333;
-
-        }
-        .para1{
-            position: absolute;
-            margin-left: 5vw;
-            margin-top:17vh; 
-            color: #333;
-
-        }
-        /* Additional styles for the dashboard */
-        .dashboard {
-            display: flex;
-        }
-
-        .sidebar {
-            width: 20vw;
-            background-color: #007bff;
-            color: white;
-            padding: 2rem;
-        }
-
-        .main-content {
-            position: absolute;
-            margin-left: 25vw;
-            padding: 2rem;
-        }
-
-        .search-patients {
-            margin-bottom: 1rem;
-        }
-
-        /* Add more styles for the search bar, profile, and patient list as needed */
-    </style>
-</head>
-<body>
-    <div class="navbar">
-        <div class="navbar-title" onclick="toggleSidebar()">Doctor Appointment Management</div>
-        <div class="profile">
-            <img src="doctor_profile.jpg" alt="Doctor Profile">
-            <h3>Dr. John Doe</h3>
-            <p class="para1">Cardiology</p>
-            <p class="para2">john.doe@example.com</p>
-            <div class="sign-out-btn">Sign Out</div>
-        </div>
-    </div>
-
-
-    <div class="dashboard">
-        <div class="sidebar">
-            <div class="profile">
-                <img src="doctor_profile.jpg" alt="Doctor Profile">
-                <h3>Dr. John Doe</h3>
-                <p>Cardiology</p>
-                <p>john.doe@example.com</p>
-                <div class="sign-out-btn">Sign Out</div>
-            </div>
-        </div>
-        
-        <div class="main-content">
-            <h1>Welcome, Dr. John Doe</h1>
-            <div class="search-patients">
-                <label for="patient-search">Search Patients:</label>
-                <input type="text" id="patient-search" placeholder="Enter patient name">
-                <button id="search-button">Search</button>
-            </div>
-
-            <ul id="patient-list">
-            </ul>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2023 Doctor Appointment Management</p>
-    </footer>
-
-    <script>
-        // JavaScript code for searching patients (simulated for demonstration)
-        document.getElementById("search-button").addEventListener("click", searchPatients);
-
-        function searchPatients() {
-            const searchTerm = document.getElementById("patient-search").value;
-
-            // Simulate searching patients and displaying results (replace with actual search logic)
-            const patients = [
-                { name: "Patient 1", age: 35, gender: "Male" },
-                { name: "Patient 2", age: 28, gender: "Female" },
-                { name: "Patient 3", age: 42, gender: "Male" },
-            ];
-
-            // Clear previous search results
-            const patientList = document.getElementById("patient-list");
-            patientList.innerHTML = '';
-
-            // Display search results
-            patients.forEach(patient => {
-                const patientItem = document.createElement("li");
-                patientItem.textContent = `${patient.name} (Age: ${patient.age}, Gender: ${patient.gender})`;
-                patientList.appendChild(patientItem);
-            });
-        }
-    </script>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -205,10 +19,10 @@
             position: absolute;
             top: 0;
             
-            width: 20vw;
-            height: 100%;
-            background-color: #007bff;
-            color: white;
+            width: 100%;
+            height: 10%;
+            background-color: #4CAF50; /* Updated background color */
+            color: white; /* Updated text color */
             transition: left 0.3s ease;
             z-index: 1000;
         }
@@ -216,6 +30,7 @@
             font-size: 1.5rem;
             font-weight: bold;
             cursor: pointer;
+            color: black;
         }
 
         /* Sidebar styles */
@@ -225,8 +40,8 @@
             left: -20vw;
             width: 20vw;
             height: 100%;
-            background-color: #007bff;
-            color: white;
+            background-color: #4CAF50; /* Updated background color */
+            color: white; /* Updated text color */
             padding: 2rem;
             z-index: 100;
             transition: left 0.3s ease;
@@ -245,13 +60,13 @@
 
         .profile {
             position: absolute;
-            background-color: #f4f4f4;
+            background-color: #ad330d;
             padding: 1rem;
-            /* text-align: center; */
             border-bottom: 1px solid #ccc;
-            width: 17.9vw;
-            height:35vh;
-            margin-top: 2vh;
+            width: 15.85vw;
+            height:100%;
+            margin-top: 10vh;
+            /* border-radius: 100%; */
         }
 
         .profile img {
@@ -263,44 +78,42 @@
             object-fit: cover;
             margin-bottom: 0.5rem;
             margin-left: 5vw;
+            margin-top: 10vh;
         }
 
         .profile h3 {
             position: absolute;
             margin: 0;
-            color: #333;
-            margin-top: 13vh;
+            color: black;
+            margin-top: 25vh;
             margin-left: 4vw;
         }
 
-        /* .profile p {
-            /* position: absolute; */
-            /* margin: 0; */
-            /* color: #777; */
-            /* margin-top: 16vh; */
-            /* margin-left: 4vw; */
-       /* } */
-
         .sign-out-btn {
-            color: #007bff;
+            background-color: black;
+            color: #f0f0f0;
             cursor: pointer;
             position: absolute;
-            margin-top: 30vh;
-            margin-left: 5.5vw;
+            margin-top: 45vh;
+            margin-left: 3vw;
+            border-radius: 1vw;
+            width: 10vw;
+            height: 5vh;
+
         }
-        .para2{
+
+        .para2 {
             position: absolute;
             margin-left: 2vw;
-            margin-top:20vh; 
-            color: #333;
-
+            margin-top:30vh; 
+            color: black;
         }
-        .para1{
+
+        .para1 {
             position: absolute;
             margin-left: 5vw;
-            margin-top:17vh; 
-            color: #333;
-
+            margin-top:35vh; 
+            color: black;
         }
 
         /* Main content styles */
@@ -337,8 +150,8 @@
         }
 
         .search-patients button {
-            background-color: #007bff;
-            color: white;
+            background-color: #4CAF50; /* Updated background color */
+            color: white; /* Updated text color */
             border: none;
             border-radius: 5px;
             padding: 0.5rem 1rem;
@@ -370,45 +183,44 @@
         .patient-item:hover {
             background-color: #f0f0f0;
         }
+
         .main-content h1{
             margin-left: 19vw;
             margin-top: 18vh;
         }
 
-        /* Add more styles as needed */
+       .signout{
+        text-decoration: none;
+        color: #fff;
+        font-size: x-large;
+       }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <div class="navbar-title" onclick="toggleSidebar()">Doctor Appointment Management</div>
-        <div class="profile">
-            <img src="doctor_profile.jpg" alt="Doctor Profile">
-            <h3>Dr. John Doe</h3>
-            <p class="para1">Cardiology</p>
-            <p class="para2">john.doe@example.com</p>
-            <button class="sign-out-btn">Sign Out</button>
-        </div>
+        <div class="navbar-title" onclick="toggleSidebar()">DOCTOR APPOINTMENT MANAGEMENT</div>
+        
     </div>
-
- 
-
-        <div class="main-content">
-            <h1>Welcome, Dr. John Doe</h1>
-            <div class="search-patients">
-                <label for="patient-search">Search Patients:</label>
-                <input type="text" id="patient-search" placeholder="Enter patient name">
-                <button id="search-button">Search</button>
-            </div>
-
-            <ul id="patient-list">
-                <!-- Patient items will be dynamically added here -->
-            </ul>
-        </div>
+    <div class="profile">
+        <img src="logohospital.png" alt="Doctor Profile">
+        <h3>Dr. John Doe</h3>
+        <p class="para1">Cardiology</p>
+        <p class="para2">john.doe@example.com</p>
+        <button class="sign-out-btn" >
+            <a href="homepage.html" class="signout">Sign Out</a>
+        </button>
     </div>
-
-    <footer>
-        <p>&copy; 2023 Doctor Appointment Management</p>
-    </footer>
+    <div class="main-content">
+        <h1>Welcome, Dr. John Doe</h1>
+        <div class="search-patients">
+            <label for="patient-search">Search Patients:</label>
+            <input type="text" id="patient-search" placeholder="Enter patient name">
+            <button id="search-button">Search</button>
+        </div>
+        <ul id="patient-list">
+            <!-- Patient items will be dynamically added here -->
+        </ul>
+    </div>
 
     <script>
         // JavaScript code for searching patients (simulated for demonstration)
@@ -434,6 +246,18 @@
                 patientItem.textContent = `${patient.name} (Age: ${patient.age}, Gender: ${patient.gender})`;
                 patientList.appendChild(patientItem);
             });
+            window.location.href="doctor_appointment_page.html";
+        }
+
+        // Toggle sidebar function
+        function toggleSidebar() {
+            const sidebar = document.querySelector(".sidebar");
+            const navbar = document.querySelector(".navbar");
+            const mainContent = document.querySelector(".main-content");
+
+            sidebar.classList.toggle("open");
+            navbar.classList.toggle("open");
+            mainContent.classList.toggle("open");
         }
     </script>
 </body>
